@@ -1,0 +1,22 @@
+class Solution {
+    public int tribonacci(int n) {
+        if(n==0){
+            return 0;
+        }else if(n==1 || n==2) {
+            return 1;
+        } else {
+            int ft = 0;  //ft=first term
+            int st = 1;  //st=second term
+            int tt = 1;  //tt=third term
+
+            for(int i=1; i<=n; i++) {
+                int tribo = ft+st+tt;
+
+                ft=st;
+                st=tt;
+                tt=tribo;
+            }
+            return ft;
+        }
+    }
+}
